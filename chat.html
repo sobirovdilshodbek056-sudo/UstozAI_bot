@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI - AI o'qituvchi bilan suhbat">
+    <title>AI Chat - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="chat.html" style="color: var(--color-primary);">AI Chat</a></li>
+                <li><a href="tests.html">Testlar</a></li>
+                <li><a href="subscription.html">Obuna</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Chiqish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Welcome message -->
+            <div class="chat-message">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-bubble">
+                    <strong>UstozAI</strong>
+                    <p style="margin: var(--spacing-sm) 0 0 0;">
+                        Assalomu alaykum! Men sizning AI o'qituvchingizman.
+                        Matematika, Fizika, Kimyo, Biologiya va boshqa fanlardan savollar bering.
+                        Sizga yordam berishga tayyorman! 📚
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <input type="text" id="chatInput" class="form-input" placeholder="Savolingizni yozing..."
+                    onkeypress="handleKeyPress(event)" />
+                <button onclick="sendMessage()" class="btn btn-primary">
+                    📤 Yuborish
+                </button>
+            </div>
+
+            <!-- Quick suggestions -->
+            <div id="suggestions"
+                style="display: flex; gap: var(--spacing-sm); margin-top: var(--spacing-md); flex-wrap: wrap; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <button onclick="quickQuestion('2x + 5 = 15 tenglamani yechib ber')" class="btn btn-sm btn-secondary">
+                    🧮 Tenglama yechish
+                </button>
+                <button onclick="quickQuestion('Fotosintez jarayonini tushuntir')" class="btn btn-sm btn-secondary">
+                    🌱 Biologiya
+                </button>
+                <button onclick="quickQuestion('Tezlik formulasini tushuntir')" class="btn btn-sm btn-secondary">
+                    🔬 Fizika
+                </button>
+                <button onclick="quickQuestion('Suvning kimyoviy formulasi')" class="btn btn-sm btn-secondary">
+                    ⚗️ Kimyo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/mockAI.js"></script>
+    <script>
+        let isWaiting = false;
+
+        // Load chat history
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!AppState.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Load previous chat messages
+            AppState.chatHistory.forEach(msg => {
+                addMessageToUI(msg.text, msg.isUser);
+            });
+
+            // Focus input
+            document.getElementById('chatInput').focus();
+        });
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        function quickQuestion(question) {
+            document.getElementById('chatInput').value = question;
+            sendMessage();
+        }
+
+        async function sendMessage() {
+            if (isWaiting) return;
+
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Add user message
+            addMessageToUI(message, true);
+            AppState.chatHistory.push({ text: message, isUser: true, time: new Date().toISOString() });
+            AppState.save();
+
+            // Clear input
+            input.value = '';
+            input.focus();
+
+            // Show typing indicator
+            isWaiting = true;
+            showTypingIndicator();
+
+            try {
+                // Get AI response
+                const response = await MockAI.getResponse(message);
+
+                // Remove typing indicator
+                removeTypingIndicator();
+
+                // Add AI response
+                addMessageToUI(response, false);
+                AppState.chatHistory.push({ text: response, isUser: false, time: new Date().toISOString() });
+                AppState.save();
+
+            } catch (error) {
+                removeTypingIndicator();
+                addMessageToUI('Kechirasiz, xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.', false);
+            }
+
+            isWaiting = false;
+        }
+
+        function addMessageToUI(text, isUser) {
+            const messagesContainer = document.getElementById('chatMessages');
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-message' + (isUser ? ' user' : '');
+
+            const avatar = document.createElement('div');
+            avatar.className = 'chat-avatar';
+            avatar.textContent = isUser ? '👤' : '🤖';
+
+            const bubble = document.createElement('div');
+            bubble.className = 'chat-bubble';
+
+            if (!isUser) {
+                const name = document.createElement('strong');
+                name.textContent = 'UstozAI';
+                bubble.appendChild(name);
+            }
+
+            const content = document.createElement('p');
+            content.style.margin = 'var(--spacing-sm) 0 0 0';
+            content.style.whiteSpace = 'pre-wrap';
+            content.textContent = text;
+            bubble.appendChild(content);
+
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(bubble);
+
+            messagesContainer.appendChild(messageDiv);
+
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const messagesContainer = document.getElementById('chatMessages');
+
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message';
+            typingDiv.id = 'typingIndicator';
+
+            const avatar = document.createElement('div');
+            avatar.className = 'chat-avatar';
+            avatar.textContent = '🤖';
+
+            const bubble = document.createElement('div');
+            bubble.className = 'chat-bubble';
+            bubble.innerHTML = '<div class="spinner"></div>';
+
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(bubble);
+
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        function logout() {
+            if (confirm('Rostdan ham chiqmoqchimisiz?')) {
+                AppState.logout();
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So'z O'rganish - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">UstozAI</span>
+                </a>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="languages.html">Tillar</a>
+                    <a href="dictionary.html">Lug'at</a>
+                    <a href="vocabulary.html" class="active">Mashq</a>
+                    <a href="grammar.html">Grammatika</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <button class="back-btn" onclick="window.location.href='dictionary.html?lang=' + currentLang">
+                    ← Lug'atga qaytish
+                </button>
+                <div class="header-title">
+                    <h1 id="pageTitle">
+                        <span id="languageFlag">🃏</span>
+                        <span id="languageName">So'z O'rganish</span>
+                    </h1>
+                    <p id="pageSubtitle">Flashcards va testlar orqali o'rganing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mode Selection -->
+    <section class="mode-selection" id="modeSelection">
+        <div class="container">
+            <h2 class="section-title">Qaysi usulda o'rganmoqchisiz?</h2>
+            <div class="modes-grid">
+                <div class="mode-card" onclick="startFlashcards()">
+                    <div class="mode-icon">🃏</div>
+                    <h3 class="mode-title">Flashcards</h3>
+                    <p class="mode-description">So'zlarni kartochkalar orqali o'rganing. Flip animatsiya bilan!</p>
+                    <ul class="mode-features">
+                        <li>✓ Interaktiv kartochkalar</li>
+                        <li>✓ Random tartibda</li>
+                        <li>✓ Progress tracking</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block">Boshlash →</button>
+                </div>
+
+                <div class="mode-card" onclick="startTest()">
+                    <div class="mode-icon">✍️</div>
+                    <h3 class="mode-title">Test Topshirish</h3>
+                    <p class="mode-description">4 variantli testlar orqali bilimingizni tekshiring!</p>
+                    <ul class="mode-features">
+                        <li>✓ 4 variantli savollar</li>
+                        <li>✓ Vaqt hisoblash</li>
+                        <li>✓ Ball tizimi</li>
+                    </ul>
+                    <button class="btn btn-success btn-block">Boshlash →</button>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="practice-settings">
+                <h3>Sozlamalar:</h3>
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <label for="wordCount">So'zlar soni:</label>
+                        <select id="wordCount" class="form-select">
+                            <option value="5">5 ta so'z</option>
+                            <option value="10" selected>10 ta so'z</option>
+                            <option value="15">15 ta so'z</option>
+                            <option value="20">20 ta so'z</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="levelSelect">Daraja:</label>
+                        <select id="levelSelect" class="form-select">
+                            <option value="all">Barcha darajalar</option>
+                            <option value="A1">A1 - Boshlang'ich</option>
+                            <option value="A2">A2 - Elementar</option>
+                            <option value="B1">B1 - O'rta</option>
+                            <option value="B2">B2 - Yuqori o'rta</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flashcard Mode -->
+    <section class="flashcard-section hidden" id="flashcardSection">
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="practice-progress">
+                <div class="progress-info">
+                    <span id="currentCard">1</span> / <span id="totalCards">10</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <button class="btn-exit" onclick="exitPractice()">✕ Chiqish</button>
+            </div>
+
+            <!-- Flashcard -->
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="card-content">
+                                <div class="card-emoji" id="cardEmoji">📝</div>
+                                <h2 class="card-word" id="cardWord">Loading...</h2>
+                                <p class="card-roman" id="cardRoman"></p>
+                                <p class="card-hint">Click to reveal translation</p>
+                            </div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-content">
+                                <div class="card-translation" id="cardTranslation">Tarjima</div>
+                                <div class="card-examples" id="cardExamples"></div>
+                                <button class="card-audio-btn" onclick="event.stopPropagation(); playCardAudio()">
+                                    🔊 Tinglash
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flashcard-navigation">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousCard()" disabled>
+                    ← Oldingi
+                </button>
+                <div class="nav-info">
+                    <button class="btn-icon" onclick="flipCard()">
+                        🔄 Aylantirish
+                    </button>
+                </div>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextCard()">
+                    Keyingi →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Mode -->
+    <section class="test-section hidden" id="testSection">
+        <div class="container">
+            <!-- Test Progress -->
+            <div class="practice-progress">
+                <div class="progress-info">
+                    <span>Savol <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span></span>
+                    <span class="test-timer">⏱️ <span id="timer">00:00</span></span>
+                    <span class="test-score">⭐ <span id="currentScore">0</span> ball</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="testProgressFill"></div>
+                </div>
+                <button class="btn-exit" onclick="exitPractice()">✕ Chiqish</button>
+            </div>
+
+            <!-- Test Question -->
+            <div class="test-container">
+                <div class="test-question-card">
+                    <div class="question-emoji" id="questionEmoji">🤔</div>
+                    <h3 class="question-text" id="questionText">Qaysi javob to'g'ri?</h3>
+                    <div class="question-word" id="questionWord">Word</div>
+                    <p class="question-instruction">To'g'ri tarjimasini tanlang:</p>
+
+                    <!-- Answer Options -->
+                    <div class="answer-options" id="answerOptions">
+                        <!-- Options will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Results Modal -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content results-modal-content">
+            <div class="results-content">
+                <div class="results-icon">🎉</div>
+                <h2 class="results-title">Test yakunlandi!</h2>
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="stat-value" id="finalScore">0</div>
+                        <div class="stat-label">Ball</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-value" id="finalPercentage">0%</div>
+                        <div class="stat-label">To'g'ri</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="stat-value" id="finalTime">00:00</div>
+                        <div class="stat-label">Vaqt</div>
+                    </div>
+                </div>
+                <div class="results-message" id="resultsMessage"></div>
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="restartTest()">🔄 Qayta boshlash</button>
+                    <button class="btn btn-secondary" onclick="exitPractice()">← Orqaga</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/languageData.js"></script>
+    <script src="js/vocabulary.js"></script>
+</body>
+
+</html>

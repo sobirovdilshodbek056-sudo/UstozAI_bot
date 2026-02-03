@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI - Testlar va bilimni tekshirish">
+    <title>Testlar - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="chat.html">AI Chat</a></li>
+                <li><a href="tests.html" style="color: var(--color-primary);">Testlar</a></li>
+                <li><a href="subscription.html">Obuna</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Chiqish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tests Section -->
+    <section class="section" style="min-height: 100vh; padding-top: 100px;">
+        <div class="container">
+            <!-- Header -->
+            <div style="margin-bottom: var(--spacing-2xl);">
+                <h1>📝 Testlar</h1>
+                <p style="color: var(--text-secondary); font-size: var(--font-size-lg);">
+                    Bilimlaringizni tekshiring va natijalaringizni tahlil qiling
+                </p>
+            </div>
+
+            <!-- Grade Selection -->
+            <div class="card" style="margin-bottom: var(--spacing-2xl);">
+                <div class="form-group">
+                    <label for="gradeSelect" class="form-label">Sinf tanlang</label>
+                    <select id="gradeSelect" class="form-select" onchange="loadTests()">
+                        <option value="">Tanlang...</option>
+                        <option value="5-sinf">5-sinf</option>
+                        <option value="6-sinf">6-sinf</option>
+                        <option value="7-sinf">7-sinf</option>
+                        <option value="8-sinf">8-sinf</option>
+                        <option value="9-sinf">9-sinf</option>
+                        <option value="10-sinf">10-sinf</option>
+                        <option value="11-sinf">11-sinf</option>
+                        <option value="abituriyent">Abituriyent</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Available Tests -->
+            <div id="testsContainer">
+                <div class="text-center" style="padding: var(--spacing-3xl); color: var(--text-muted);">
+                    <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">📚</div>
+                    <h3>Sinfni tanlang</h3>
+                    <p>Yuqoridan sinfingizni tanlab, mavjud testlarni ko'ring</p>
+                </div>
+            </div>
+
+            <!-- Test History -->
+            <div id="testHistory" style="margin-top: var(--spacing-3xl); display: none;">
+                <h2 style="margin-bottom: var(--spacing-xl);">📊 Topshirilgan testlar</h2>
+                <div id="historyContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script src="js/testData.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!AppState.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Set user's grade by default
+            const user = AppState.user;
+            if (user && user.grade) {
+                document.getElementById('gradeSelect').value = user.grade;
+                loadTests();
+            }
+
+            // Load test history
+            loadTestHistory();
+        });
+
+        function loadTests() {
+            const grade = document.getElementById('gradeSelect').value;
+            const container = document.getElementById('testsContainer');
+
+            if (!grade) {
+                container.innerHTML = `
+                    <div class="text-center" style="padding: var(--spacing-3xl); color: var(--text-muted);">
+                        <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">📚</div>
+                        <h3>Sinfni tanlang</h3>
+                        <p>Yuqoridan sinfingizni tanlab, mavjud testlarni ko'ring</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const tests = TestData.getTestsByGrade(grade);
+            const subjects = Object.keys(tests);
+
+            if (subjects.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center" style="padding: var(--spacing-3xl); color: var(--text-muted);">
+                        <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">🔍</div>
+                        <h3>Testlar topilmadi</h3>
+                        <p>Bu sinf uchun hali testlar qo'shilmagan</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '<div class="grid grid-2">';
+
+            subjects.forEach(subject => {
+                const test = tests[subject];
+                const subjectEmoji = {
+                    'matematika': '🧮',
+                    'fizika': '🔬',
+                    'kimyo': '⚗️',
+                    'biologiya': '🌱'
+                };
+
+                html += `
+                    <div class="card card-gradient">
+                        <div class="card-icon">${subjectEmoji[subject] || '📖'}</div>
+                        <h3 class="card-title">${test.title}</h3>
+                        <div style="margin: var(--spacing-lg) 0;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                <span style="color: var(--text-secondary);">Savollar:</span>
+                                <span style="font-weight: 600;">${test.questions.length} ta</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                <span style="color: var(--text-secondary);">Vaqt:</span>
+                                <span style="font-weight: 600;">${test.duration} daqiqa</span>
+                            </div>
+                        </div>
+                        <button onclick="startTest('${grade}', '${subject}')" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md);">
+                            🚀 Testni boshlash
+                        </button>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function startTest(grade, subject) {
+            // Save test info to session storage
+            sessionStorage.setItem('currentTest', JSON.stringify({ grade, subject }));
+            window.location.href = 'test-taking.html';
+        }
+
+        function loadTestHistory() {
+            const historyContainer = document.getElementById('historyContainer');
+            const historySection = document.getElementById('testHistory');
+            const results = AppState.testResults;
+
+            if (results.length === 0) {
+                historySection.style.display = 'none';
+                return;
+            }
+
+            historySection.style.display = 'block';
+
+            let html = '<div class="grid grid-2">';
+
+            results.forEach((result, index) => {
+                const scoreColor = result.score >= 80 ? '#22c55e' : result.score >= 60 ? '#f59e0b' : '#ef4444';
+                const statusText = result.passed ? '✅ O\'tdi' : '❌ O\'tmadi';
+
+                html += `
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-md);">
+                            <div>
+                                <h4>${result.testTitle}</h4>
+                                <p style="color: var(--text-muted); font-size: var(--font-size-sm); margin: var(--spacing-xs) 0;">
+                                    ${formatDate(result.completedAt)}
+                                </p>
+                            </div>
+                            <div style="background: ${scoreColor}; color: white; padding: var(--spacing-xs) var(--spacing-md); border-radius: var(--radius-full); font-weight: 700;">
+                                ${result.score}%
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                            <span style="color: var(--text-secondary);">
+                                ${result.correctAnswers}/${result.totalQuestions} to'g'ri
+                            </span>
+                            <a href="results.html?index=${index}" style="color: var(--color-primary); font-weight: 600;">
+                                Batafsil →
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            historyContainer.innerHTML = html;
+        }
+
+        function logout() {
+            if (confirm('Rostdan ham chiqmoqchimisiz?')) {
+                AppState.logout();
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

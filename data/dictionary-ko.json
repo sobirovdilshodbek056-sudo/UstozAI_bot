@@ -1,0 +1,515 @@
+{
+    "language": "ko",
+    "words": [
+        {
+            "id": 1,
+            "word": "안녕하세요",
+            "romanization": "annyeonghaseyo",
+            "translation": "salom",
+            "transcription": "[an.njʌŋ.ha.se.jo]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ko": "안녕하세요! 어떻게 지내세요?",
+                    "uz": "Salom! Qalaysiz?"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 2,
+            "word": "안녕히 가세요",
+            "romanization": "annyeonghi gaseyo",
+            "translation": "xayr (ketayotganga)",
+            "transcription": "[an.njʌŋ.hi ka.se.jo]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ko": "안녕히 가세요!",
+                    "uz": "Xayr!"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 3,
+            "word": "감사합니다",
+            "romanization": "gamsahamnida",
+            "translation": "rahmat",
+            "transcription": "[kam.sa.ham.ni.da]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ko": "감사합니다!",
+                    "uz": "Rahmat!"
+                }
+            ],
+            "image": "🙏"
+        },
+        {
+            "id": 4,
+            "word": "네",
+            "romanization": "ne",
+            "translation": "ha",
+            "transcription": "[ne]",
+            "partOfSpeech": "adverb",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "ko": "네, 알겠습니다.",
+                    "uz": "Ha, tushundim."
+                }
+            ],
+            "image": "✅"
+        },
+        {
+            "id": 5,
+            "word": "아니요",
+            "romanization": "aniyo",
+            "translation": "yo'q",
+            "transcription": "[a.ni.jo]",
+            "partOfSpeech": "adverb",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "ko": "아니요, 모르겠어요.",
+                    "uz": "Yo'q, bilmayman."
+                }
+            ],
+            "image": "❌"
+        },
+        {
+            "id": 6,
+            "word": "물",
+            "romanization": "mul",
+            "translation": "suv",
+            "transcription": "[mul]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "ko": "물 한 잔 주세요.",
+                    "uz": "Bir stakan suv bering."
+                }
+            ],
+            "image": "💧"
+        },
+        {
+            "id": 7,
+            "word": "음식",
+            "romanization": "eumsik",
+            "translation": "ovqat",
+            "transcription": "[ɯm.ɕik]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "ko": "이 음식은 맛있어요!",
+                    "uz": "Bu ovqat mazali!"
+                }
+            ],
+            "image": "🍽️"
+        },
+        {
+            "id": 8,
+            "word": "집",
+            "romanization": "jip",
+            "translation": "uy",
+            "transcription": "[tɕip]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "ko": "저는 작은 집에 살아요.",
+                    "uz": "Men kichik uyda yashayman."
+                }
+            ],
+            "image": "🏠"
+        },
+        {
+            "id": 9,
+            "word": "학교",
+            "romanization": "hakgyo",
+            "translation": "maktab",
+            "transcription": "[hak.k͈jo]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "ko": "저는 매일 학교에 가요.",
+                    "uz": "Men har kuni maktabga boraman."
+                }
+            ],
+            "image": "🏫"
+        },
+        {
+            "id": 10,
+            "word": "책",
+            "romanization": "chaek",
+            "translation": "kitob",
+            "transcription": "[tɕʰɛk]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "objects",
+            "examples": [
+                {
+                    "ko": "저는 책을 읽고 있어요.",
+                    "uz": "Men kitob o'qiyapman."
+                }
+            ],
+            "image": "📚"
+        },
+        {
+            "id": 11,
+            "word": "친구",
+            "romanization": "chingu",
+            "translation": "do'st",
+            "transcription": "[tɕʰin.ɡu]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "ko": "그녀는 제 가장 친한 친구예요.",
+                    "uz": "U mening eng yaxshi do'stim."
+                }
+            ],
+            "image": "👥"
+        },
+        {
+            "id": 12,
+            "word": "가족",
+            "romanization": "gajok",
+            "translation": "oila",
+            "transcription": "[ka.dʑok]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "ko": "저는 가족을 사랑해요.",
+                    "uz": "Men oilamni yaxshi ko'raman."
+                }
+            ],
+            "image": "👨‍👩‍👧‍👦"
+        },
+        {
+            "id": 13,
+            "word": "시간",
+            "romanization": "sigan",
+            "translation": "vaqt",
+            "transcription": "[ɕi.ɡan]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "time",
+            "examples": [
+                {
+                    "ko": "지금 몇 시예요?",
+                    "uz": "Hozir soat necha?"
+                }
+            ],
+            "image": "⏰"
+        },
+        {
+            "id": 14,
+            "word": "사랑",
+            "romanization": "sarang",
+            "translation": "sevgi",
+            "transcription": "[sa.ɾaŋ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ko": "사랑해요.",
+                    "uz": "Men seni yaxshi ko'raman."
+                }
+            ],
+            "image": "❤️"
+        },
+        {
+            "id": 15,
+            "word": "행복하다",
+            "romanization": "haengbokhada",
+            "translation": "baxtli",
+            "transcription": "[hɛŋ.bok.ha.da]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ko": "저는 오늘 아주 행복해요!",
+                    "uz": "Men bugun juda baxtliman!"
+                }
+            ],
+            "image": "😊"
+        },
+        {
+            "id": 16,
+            "word": "아름답다",
+            "romanization": "areumdapda",
+            "translation": "chiroyli",
+            "transcription": "[a.ɾɯm.dap.t͈a]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "ko": "정말 아름다운 날이에요!",
+                    "uz": "Qanday chiroyli kun!"
+                }
+            ],
+            "image": "🌸"
+        },
+        {
+            "id": 17,
+            "word": "중요하다",
+            "romanization": "jungyohada",
+            "translation": "muhim",
+            "transcription": "[tɕuŋ.jo.ha.da]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "ko": "이것은 매우 중요해요.",
+                    "uz": "Bu juda muhim."
+                }
+            ],
+            "image": "⚠️"
+        },
+        {
+            "id": 18,
+            "word": "이해하다",
+            "romanization": "ihaehada",
+            "translation": "tushunmoq",
+            "transcription": "[i.hɛ.ha.da]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ko": "이해하셨어요?",
+                    "uz": "Tushunyapsizmi?"
+                }
+            ],
+            "image": "💡"
+        },
+        {
+            "id": 19,
+            "word": "말하다",
+            "romanization": "malhada",
+            "translation": "gapirmoq",
+            "transcription": "[mal.ha.da]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ko": "저는 한국어를 말할 수 있어요.",
+                    "uz": "Men koreys tilida gapira olaman."
+                }
+            ],
+            "image": "🗣️"
+        },
+        {
+            "id": 20,
+            "word": "배우다",
+            "romanization": "baeuda",
+            "translation": "o'rganmoq",
+            "transcription": "[pɛ.u.da]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ko": "한국어를 배우고 싶어요.",
+                    "uz": "Men koreys tilini o'rganmoqchiman."
+                }
+            ],
+            "image": "📖"
+        },
+        {
+            "id": 21,
+            "word": "일하다",
+            "romanization": "ilhada",
+            "translation": "ishlamoq",
+            "transcription": "[il.ha.da]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ko": "저는 매일 일해요.",
+                    "uz": "Men har kuni ishlayman."
+                }
+            ],
+            "image": "💼"
+        },
+        {
+            "id": 22,
+            "word": "돕다",
+            "romanization": "dopda",
+            "translation": "yordam bermoq",
+            "transcription": "[top.t͈a]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ko": "도와주실 수 있어요?",
+                    "uz": "Menga yordam bera olasizmi?"
+                }
+            ],
+            "image": "🤝"
+        },
+        {
+            "id": 23,
+            "word": "훌륭하다",
+            "romanization": "hullyunghada",
+            "translation": "ajoyib",
+            "transcription": "[hul.ljuŋ.ha.da]",
+            "partOfSpeech": "adjective",
+            "level": "B1",
+            "category": "description",
+            "examples": [
+                {
+                    "ko": "당신의 작품은 훌륭해요!",
+                    "uz": "Sizning ishingiz ajoyib!"
+                }
+            ],
+            "image": "⭐"
+        },
+        {
+            "id": 24,
+            "word": "지식",
+            "romanization": "jisik",
+            "translation": "bilim",
+            "transcription": "[tɕi.ɕik]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "education",
+            "examples": [
+                {
+                    "ko": "지식은 힘이에요.",
+                    "uz": "Bilim - kuch."
+                }
+            ],
+            "image": "🧠"
+        },
+        {
+            "id": 25,
+            "word": "성공",
+            "romanization": "seonggong",
+            "translation": "muvaffaqiyat",
+            "transcription": "[sʌŋ.ɡoŋ]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ko": "성공을 기원합니다!",
+                    "uz": "Sizga muvaffaqiyat tilayman!"
+                }
+            ],
+            "image": "🏆"
+        },
+        {
+            "id": 26,
+            "word": "달성하다",
+            "romanization": "dalseonghada",
+            "translation": "erishmoq",
+            "transcription": "[tal.sʌŋ.ha.da]",
+            "partOfSpeech": "verb",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ko": "목표를 달성할 수 있어요!",
+                    "uz": "Maqsadlaringizga erisha olasiz!"
+                }
+            ],
+            "image": "🎯"
+        },
+        {
+            "id": 27,
+            "word": "기회",
+            "romanization": "gihoe",
+            "translation": "imkoniyat",
+            "transcription": "[ki.hø]",
+            "partOfSpeech": "noun",
+            "level": "B2",
+            "category": "business",
+            "examples": [
+                {
+                    "ko": "이것은 좋은 기회예요.",
+                    "uz": "Bu ajoyib imkoniyat."
+                }
+            ],
+            "image": "🚪"
+        },
+        {
+            "id": 28,
+            "word": "꿈",
+            "romanization": "kkum",
+            "translation": "orzu",
+            "transcription": "[k͈um]",
+            "partOfSpeech": "noun",
+            "level": "A2",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ko": "제 꿈은 선생님이 되는 거예요.",
+                    "uz": "Mening orzuyim o'qituvchi bo'lish."
+                }
+            ],
+            "image": "✨"
+        },
+        {
+            "id": 29,
+            "word": "노력",
+            "romanization": "noryeok",
+            "translation": "harakat",
+            "transcription": "[no.ɾjʌk]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ko": "노력하면 성공할 수 있어요.",
+                    "uz": "Harakat qilsangiz, muvaffaqiyatga erishasiz."
+                }
+            ],
+            "image": "💪"
+        },
+        {
+            "id": 30,
+            "word": "희망",
+            "romanization": "huimang",
+            "translation": "umid",
+            "transcription": "[ɕʷi.maŋ]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ko": "희망을 잃지 마세요.",
+                    "uz": "Umidingizni yo'qotmang."
+                }
+            ],
+            "image": "🌟"
+        }
+    ]
+}

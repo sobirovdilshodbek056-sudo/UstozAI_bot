@@ -1,0 +1,485 @@
+{
+    "language": "de",
+    "words": [
+        {
+            "id": 1,
+            "word": "Hallo",
+            "translation": "salom",
+            "transcription": "[ˈhalo]",
+            "partOfSpeech": "interjection",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "de": "Hallo! Wie geht es dir?",
+                    "uz": "Salom! Qalaysan?"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 2,
+            "word": "Tschüss",
+            "translation": "xayr",
+            "transcription": "[tʃʏs]",
+            "partOfSpeech": "interjection",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "de": "Tschüss! Bis morgen!",
+                    "uz": "Xayr! Ertaga ko'rishguncha!"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 3,
+            "word": "Danke",
+            "translation": "rahmat",
+            "transcription": "[ˈdaŋkə]",
+            "partOfSpeech": "interjection",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "de": "Danke schön!",
+                    "uz": "Katta rahmat!"
+                }
+            ],
+            "image": "🙏"
+        },
+        {
+            "id": 4,
+            "word": "Bitte",
+            "translation": "iltimos/marhamat",
+            "transcription": "[ˈbɪtə]",
+            "partOfSpeech": "adverb",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "de": "Bitte helfen Sie mir.",
+                    "uz": "Iltimos, menga yordam bering."
+                }
+            ],
+            "image": "🙏"
+        },
+        {
+            "id": 5,
+            "word": "Ja",
+            "translation": "ha",
+            "transcription": "[jaː]",
+            "partOfSpeech": "adverb",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "de": "Ja, ich verstehe.",
+                    "uz": "Ha, men tushundim."
+                }
+            ],
+            "image": "✅"
+        },
+        {
+            "id": 6,
+            "word": "Nein",
+            "translation": "yo'q",
+            "transcription": "[naɪn]",
+            "partOfSpeech": "adverb",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "de": "Nein, das ist falsch.",
+                    "uz": "Yo'q, bu noto'g'ri."
+                }
+            ],
+            "image": "❌"
+        },
+        {
+            "id": 7,
+            "word": "Wasser",
+            "translation": "suv",
+            "transcription": "[ˈvasɐ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "de": "Ich möchte ein Glas Wasser.",
+                    "uz": "Men bir stakan suv xohlayman."
+                }
+            ],
+            "image": "💧"
+        },
+        {
+            "id": 8,
+            "word": "Essen",
+            "translation": "ovqat",
+            "transcription": "[ˈɛsn̩]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "de": "Das Essen ist lecker!",
+                    "uz": "Ovqat mazali!"
+                }
+            ],
+            "image": "🍽️"
+        },
+        {
+            "id": 9,
+            "word": "Haus",
+            "translation": "uy",
+            "transcription": "[haʊs]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "de": "Ich wohne in einem kleinen Haus.",
+                    "uz": "Men kichik uyda yashayman."
+                }
+            ],
+            "image": "🏠"
+        },
+        {
+            "id": 10,
+            "word": "Schule",
+            "translation": "maktab",
+            "transcription": "[ˈʃuːlə]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "de": "Ich gehe jeden Tag zur Schule.",
+                    "uz": "Men har kuni maktabga boraman."
+                }
+            ],
+            "image": "🏫"
+        },
+        {
+            "id": 11,
+            "word": "Buch",
+            "translation": "kitob",
+            "transcription": "[buːx]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "objects",
+            "examples": [
+                {
+                    "de": "Ich lese ein Buch.",
+                    "uz": "Men kitob o'qiyapman."
+                }
+            ],
+            "image": "📚"
+        },
+        {
+            "id": 12,
+            "word": "Freund",
+            "translation": "do'st",
+            "transcription": "[frɔʏnt]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "de": "Er ist mein bester Freund.",
+                    "uz": "U mening eng yaxshi do'stim."
+                }
+            ],
+            "image": "👥"
+        },
+        {
+            "id": 13,
+            "word": "Familie",
+            "translation": "oila",
+            "transcription": "[faˈmiːliə]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "de": "Ich liebe meine Familie.",
+                    "uz": "Men oilamni yaxshi ko'raman."
+                }
+            ],
+            "image": "👨‍👩‍👧‍👦"
+        },
+        {
+            "id": 14,
+            "word": "Zeit",
+            "translation": "vaqt",
+            "transcription": "[tsaɪt]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "time",
+            "examples": [
+                {
+                    "de": "Wie viel Uhr ist es?",
+                    "uz": "Soat necha?"
+                }
+            ],
+            "image": "⏰"
+        },
+        {
+            "id": 15,
+            "word": "Tag",
+            "translation": "kun",
+            "transcription": "[taːk]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "time",
+            "examples": [
+                {
+                    "de": "Guten Tag!",
+                    "uz": "Xayrli kun!"
+                }
+            ],
+            "image": "☀️"
+        },
+        {
+            "id": 16,
+            "word": "Nacht",
+            "translation": "kecha/tun",
+            "transcription": "[naxt]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "time",
+            "examples": [
+                {
+                    "de": "Gute Nacht!",
+                    "uz": "Xayrli tun!"
+                }
+            ],
+            "image": "🌙"
+        },
+        {
+            "id": 17,
+            "word": "Liebe",
+            "translation": "sevgi",
+            "transcription": "[ˈliːbə]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "emotions",
+            "examples": [
+                {
+                    "de": "Ich liebe dich.",
+                    "uz": "Men seni yaxshi ko'raman."
+                }
+            ],
+            "image": "❤️"
+        },
+        {
+            "id": 18,
+            "word": "glücklich",
+            "translation": "baxtli",
+            "transcription": "[ˈɡlʏklɪç]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "emotions",
+            "examples": [
+                {
+                    "de": "Ich bin sehr glücklich!",
+                    "uz": "Men juda baxtliman!"
+                }
+            ],
+            "image": "😊"
+        },
+        {
+            "id": 19,
+            "word": "schön",
+            "translation": "chiroyli",
+            "transcription": "[ʃøːn]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "de": "Was für ein schöner Tag!",
+                    "uz": "Qanday chiroyli kun!"
+                }
+            ],
+            "image": "🌸"
+        },
+        {
+            "id": 20,
+            "word": "wichtig",
+            "translation": "muhim",
+            "transcription": "[ˈvɪçtɪç]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "de": "Das ist sehr wichtig.",
+                    "uz": "Bu juda muhim."
+                }
+            ],
+            "image": "⚠️"
+        },
+        {
+            "id": 21,
+            "word": "verstehen",
+            "translation": "tushunmoq",
+            "transcription": "[fɛɐˈʃteːən]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "de": "Verstehen Sie das?",
+                    "uz": "Buni tushunasizmi?"
+                }
+            ],
+            "image": "💡"
+        },
+        {
+            "id": 22,
+            "word": "sprechen",
+            "translation": "gapirmoq",
+            "transcription": "[ˈʃpʁɛçn̩]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "de": "Ich kann Deutsch sprechen.",
+                    "uz": "Men nemis tilida gapira olaman."
+                }
+            ],
+            "image": "🗣️"
+        },
+        {
+            "id": 23,
+            "word": "lernen",
+            "translation": "o'rganmoq",
+            "transcription": "[ˈlɛʁnən]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "de": "Ich möchte Deutsch lernen.",
+                    "uz": "Men nemis tilini o'rganmoqchiman."
+                }
+            ],
+            "image": "📖"
+        },
+        {
+            "id": 24,
+            "word": "arbeiten",
+            "translation": "ishlamoq",
+            "transcription": "[ˈaʁbaɪtn̩]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "de": "Ich arbeite jeden Tag.",
+                    "uz": "Men har kuni ishlayman."
+                }
+            ],
+            "image": "💼"
+        },
+        {
+            "id": 25,
+            "word": "helfen",
+            "translation": "yordam bermoq",
+            "transcription": "[ˈhɛlfn̩]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "de": "Können Sie mir helfen?",
+                    "uz": "Menga yordam bera olasizmi?"
+                }
+            ],
+            "image": "🤝"
+        },
+        {
+            "id": 26,
+            "word": "ausgezeichnet",
+            "translation": "ajoyib",
+            "transcription": "[ˈaʊsɡətsaɪçnət]",
+            "partOfSpeech": "adjective",
+            "level": "B1",
+            "category": "description",
+            "examples": [
+                {
+                    "de": "Ihre Arbeit ist ausgezeichnet!",
+                    "uz": "Sizning ishingiz ajoyib!"
+                }
+            ],
+            "image": "⭐"
+        },
+        {
+            "id": 27,
+            "word": "Wissen",
+            "translation": "bilim",
+            "transcription": "[ˈvɪsn̩]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "education",
+            "examples": [
+                {
+                    "de": "Wissen ist Macht.",
+                    "uz": "Bilim - kuch."
+                }
+            ],
+            "image": "🧠"
+        },
+        {
+            "id": 28,
+            "word": "Erfolg",
+            "translation": "muvaffaqiyat",
+            "transcription": "[ɛɐˈfɔlk]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "de": "Ich wünsche dir viel Erfolg!",
+                    "uz": "Sizga muvaffaqiyat tilayman!"
+                }
+            ],
+            "image": "🏆"
+        },
+        {
+            "id": 29,
+            "word": "erreichen",
+            "translation": "erishmoq",
+            "transcription": "[ɛɐˈʁaɪçn̩]",
+            "partOfSpeech": "verb",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "de": "Du kannst deine Ziele erreichen!",
+                    "uz": "Siz maqsadlaringizga erisha olasiz!"
+                }
+            ],
+            "image": "🎯"
+        },
+        {
+            "id": 30,
+            "word": "Möglichkeit",
+            "translation": "imkoniyat",
+            "transcription": "[ˈmøːklɪçkaɪt]",
+            "partOfSpeech": "noun",
+            "level": "B2",
+            "category": "business",
+            "examples": [
+                {
+                    "de": "Das ist eine großartige Möglichkeit.",
+                    "uz": "Bu ajoyib imkoniyat."
+                }
+            ],
+            "image": "🚪"
+        }
+    ]
+}

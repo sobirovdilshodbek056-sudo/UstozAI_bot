@@ -1,0 +1,60 @@
+{
+    "languages": [
+        {
+            "id": "en",
+            "name": "Ingliz tili",
+            "nameNative": "English",
+            "flag": "🇺🇸",
+            "color": "#3b82f6",
+            "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            "level": "A1-C2",
+            "totalWords": 100,
+            "totalLessons": 15,
+            "description": "Dunyoning eng keng tarqalgan tili. Biznes, texnologiya va ilm-fan tili.",
+            "difficulty": "Oson",
+            "speakers": "1.5 milliard"
+        },
+        {
+            "id": "de",
+            "name": "Nemis tili",
+            "nameNative": "Deutsch",
+            "flag": "🇩🇪",
+            "color": "#ef4444",
+            "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+            "level": "A1-C2",
+            "totalWords": 100,
+            "totalLessons": 15,
+            "description": "Evropaning eng muhim tillaridan biri. Ilm-fan va muhandislik tili.",
+            "difficulty": "O'rtacha",
+            "speakers": "130 million"
+        },
+        {
+            "id": "ko",
+            "name": "Koreys tili",
+            "nameNative": "한국어",
+            "flag": "🇰🇷",
+            "color": "#8b5cf6",
+            "gradient": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+            "level": "A1-C2",
+            "totalWords": 100,
+            "totalLessons": 15,
+            "description": "K-pop va K-drama tili. Texnologiya va madaniyat tili.",
+            "difficulty": "O'rtacha",
+            "speakers": "80 million"
+        },
+        {
+            "id": "ja",
+            "name": "Yapon tili",
+            "nameNative": "日本語",
+            "flag": "🇯🇵",
+            "color": "#ec4899",
+            "gradient": "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+            "level": "A1-C2",
+            "totalWords": 100,
+            "totalLessons": 15,
+            "description": "Anime va texnologiya tili. Boy madaniyat va tarix tili.",
+            "difficulty": "Qiyin",
+            "speakers": "125 million"
+        }
+    ]
+}

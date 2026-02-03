@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI - Obuna va to'lov">
+    <title>Obuna - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="chat.html">AI Chat</a></li>
+                <li><a href="tests.html">Testlar</a></li>
+                <li><a href="subscription.html" style="color: var(--color-primary);">Obuna</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Chiqish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subscription Section -->
+    <section class="section" style="min-height: 100vh; padding-top: 100px;">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-title">
+                <h1><span class="text-gradient">Premium</span> obunaga o'ting!</h1>
+                <p>Cheksiz imkoniyatlar va eng yaxshi tajriba</p>
+            </div>
+
+            <!-- Current Subscription -->
+            <div class="card card-gradient text-center" style="margin-bottom: var(--spacing-3xl);"
+                id="currentSubscription">
+                <h3 style="margin-bottom: var(--spacing-md);">Hozirgi obuna</h3>
+                <div style="font-size: var(--font-size-3xl); font-weight: 800; margin-bottom: var(--spacing-sm);">
+                    <span class="text-gradient" id="currentPlan">Bepul sinov</span>
+                </div>
+                <p style="color: var(--text-secondary);" id="subscriptionStatus">
+                    7 kun qoldi
+                </p>
+            </div>
+
+            <!-- Pricing Plans -->
+            <div class="grid grid-3" style="margin-bottom: var(--spacing-3xl);">
+                <!-- Monthly Plan -->
+                <div class="pricing-card">
+                    <h3>Oylik</h3>
+                    <div class="pricing-price">50,000 <small style="font-size: var(--font-size-lg);">so'm</small></div>
+                    <p style="color: var(--text-muted);">har oy</p>
+                    <ul class="pricing-features">
+                        <li>Cheksiz savollar</li>
+                        <li>Cheksiz testlar</li>
+                        <li>Barcha fanlar</li>
+                        <li>Xato tahlili</li>
+                        <li>Ota-ona paneli</li>
+                        <li>24/7 qo'llab-quvvatlash</li>
+                    </ul>
+                    <button onclick="selectPlan('monthly', 50000)" class="btn btn-primary"
+                        style="width: 100%; margin-top: auto;">
+                        Tanlash
+                    </button>
+                </div>
+
+                <!-- Yearly Plan (Popular) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">⭐ Mashhur</div>
+                    <h3>Yillik</h3>
+                    <div class="pricing-price">500,000 <small style="font-size: var(--font-size-lg);">so'm</small></div>
+                    <p style="color: var(--text-muted);">har yil <span style="color: #22c55e;">(2 oy bepul!)</span></p>
+                    <ul class="pricing-features">
+                        <li>Cheksiz savollar</li>
+                        <li>Cheksiz testlar</li>
+                        <li>Barcha fanlar</li>
+                        <li>Xato tahlili</li>
+                        <li>Ota-ona paneli</li>
+                        <li>Shaxsiy mentor</li>
+                        <li>Maxsus kontentlar</li>
+                        <li>Ustunlik qo'llab-quvvatlash</li>
+                    </ul>
+                    <button onclick="selectPlan('yearly', 500000)" class="btn btn-primary"
+                        style="width: 100%; margin-top: auto;">
+                        Tanlash
+                    </button>
+                </div>
+
+                <!-- Lifetime Plan -->
+                <div class="pricing-card">
+                    <h3>Umrbod</h3>
+                    <div class="pricing-price">1,000,000 <small style="font-size: var(--font-size-lg);">so'm</small>
+                    </div>
+                    <p style="color: var(--text-muted);">bir marta to'lov</p>
+                    <ul class="pricing-features">
+                        <li>Cheksiz savollar</li>
+                        <li>Cheksiz testlar</li>
+                        <li>Barcha fanlar</li>
+                        <li>Xato tahlili</li>
+                        <li>Ota-ona paneli</li>
+                        <li>Shaxsiy mentor</li>
+                        <li>VIP kontentlar</li>
+                        <li>Umrbod yangilanishlar</li>
+                        <li>Maxsus chegirmalar</li>
+                    </ul>
+                    <button onclick="selectPlan('lifetime', 1000000)" class="btn btn-outline"
+                        style="width: 100%; margin-top: auto;">
+                        Tanlash
+                    </button>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="card" style="display: none;" id="paymentSection">
+                <h2 style="margin-bottom: var(--spacing-xl);">💳 To'lov usulini tanlang</h2>
+
+                <div
+                    style="background: var(--bg-tertiary); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-bottom: var(--spacing-xl);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                        <span>Tanlangan paket:</span>
+                        <strong id="selectedPlanName">Oylik</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Summa:</span>
+                        <strong style="font-size: var(--font-size-xl); color: var(--color-secondary);"
+                            id="selectedPlanPrice">50,000 so'm</strong>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <button onclick="selectPaymentMethod('payme')" class="card"
+                        style="cursor: pointer; text-align: center; padding: var(--spacing-xl);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💳</div>
+                        <h4>Payme</h4>
+                        <p style="color: var(--text-muted); font-size: var(--font-size-sm);">Payme orqali to'lash</p>
+                    </button>
+
+                    <button onclick="selectPaymentMethod('click')" class="card"
+                        style="cursor: pointer; text-align: center; padding: var(--spacing-xl);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📱</div>
+                        <h4>Click</h4>
+                        <p style="color: var(--text-muted); font-size: var(--font-size-sm);">Click orqali to'lash</p>
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="cancelPayment()" class="btn btn-secondary">
+                        ❌ Bekor qilish
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="card">
+                <h2 style="margin-bottom: var(--spacing-xl);">❓ Ko'p beriladigan savollar</h2>
+
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    <div>
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                            To'lovni qanday amalga oshiraman?
+                        </h4>
+                        <p style="color: var(--text-secondary);">
+                            Paketni tanlab, Payme yoki Click orqali xavfsiz to'lov qilishingiz mumkin.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                            Obunani bekor qilsam pul qaytadimi?
+                        </h4>
+                        <p style="color: var(--text-secondary);">
+                            Obunani istalgan vaqt bekor qilishingiz mumkin. Qolgan kunlar uchun proporsional
+                            qaytariladi.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                            Bir nechta farzand uchun ishlatsa bo'ladimi?
+                        </h4>
+                        <p style="color: var(--text-secondary);">
+                            Ha, bir obuna bilan 3 tagacha o'quvchi hisobini yaratishingiz mumkin.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                            Bepul sinov muddati tugagach nima bo'ladi?
+                        </h4>
+                        <p style="color: var(--text-secondary);">
+                            Bepul sinov tugagach, premium funksiyalar cheklangan bo'ladi. Obuna sotib olishingiz kerak
+                            bo'ladi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        let selectedPlanInfo = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!AppState.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            updateCurrentSubscription();
+        });
+
+        function updateCurrentSubscription() {
+            if (AppState.subscription) {
+                const planNames = {
+                    'free_trial': 'Bepul sinov',
+                    'monthly': 'Oylik Premium',
+                    'yearly': 'Yillik Premium',
+                    'lifetime': 'Umrbod Premium'
+                };
+
+                document.getElementById('currentPlan').textContent =
+                    planNames[AppState.subscription.type] || 'Bepul sinov';
+
+                const endDate = new Date(AppState.subscription.endDate);
+                const today = new Date();
+                const daysLeft = Math.max(0, Math.ceil((endDate - today) / (1000 * 60 * 60 * 24)));
+
+                if (AppState.subscription.type === 'lifetime') {
+                    document.getElementById('subscriptionStatus').textContent = 'Umrbod faol';
+                } else {
+                    document.getElementById('subscriptionStatus').textContent =
+                        `${daysLeft} kun qoldi`;
+                }
+            }
+        }
+
+        function selectPlan(planType, price) {
+            const planNames = {
+                'monthly': 'Oylik',
+                'yearly': 'Yillik',
+                'lifetime': 'Umrbod'
+            };
+
+            selectedPlanInfo = { type: planType, price: price };
+
+            document.getElementById('selectedPlanName').textContent = planNames[planType];
+            document.getElementById('selectedPlanPrice').textContent =
+                price.toLocaleString('uz-UZ') + ' so\'m';
+
+            // Show payment section
+            document.getElementById('paymentSection').style.display = 'block';
+
+            // Scroll to payment section
+            document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectPaymentMethod(method) {
+            if (!selectedPlanInfo) return;
+
+            // Mock payment processing
+            showNotification('To\'lov tizimiga yo\'naltirilmoqda...', 'success');
+
+            // Simulate payment
+            setTimeout(() => {
+                processPayment(method);
+            }, 2000);
+        }
+
+        function processPayment(method) {
+            // Mock successful payment
+            const endDate = new Date();
+
+            if (selectedPlanInfo.type === 'monthly') {
+                endDate.setMonth(endDate.getMonth() + 1);
+            } else if (selectedPlanInfo.type === 'yearly') {
+                endDate.setFullYear(endDate.getFullYear() + 1);
+            } else if (selectedPlanInfo.type === 'lifetime') {
+                endDate.setFullYear(endDate.getFullYear() + 100); // 100 years
+            }
+
+            AppState.subscription = {
+                type: selectedPlanInfo.type,
+                startDate: new Date().toISOString(),
+                endDate: endDate.toISOString(),
+                paymentMethod: method,
+                amount: selectedPlanInfo.price
+            };
+
+            AppState.save();
+
+            showNotification('To\'lov muvaffaqiyatli amalga oshirildi! 🎉', 'success');
+
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 2000);
+        }
+
+        function cancelPayment() {
+            document.getElementById('paymentSection').style.display = 'none';
+            selectedPlanInfo = null;
+        }
+
+        function logout() {
+            if (confirm('Rostdan ham chiqmoqchimisiz?')) {
+                AppState.logout();
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

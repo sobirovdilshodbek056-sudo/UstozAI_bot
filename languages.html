@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Til O'rganish - UstozAI</title>
+    <meta name="description" content="Ingliz, Nemis, Koreys va Yapon tillarini UstozAI bilan o'rganing">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">UstozAI</span>
+                </a>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="languages.html" class="active">Tillar</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="subscription.html">Premium</a>
+                </div>
+                <div class="user-menu">
+                    <span class="user-name" id="userName">O'quvchi</span>
+                    <button class="btn-icon" onclick="window.location.href='index.html'">
+                        <span>🚪</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section language-hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-icon">🌍</span>
+                    Dunyoni Kashf Eting
+                </h1>
+                <p class="hero-subtitle">
+                    4 ta til. Cheksiz imkoniyatlar. Bitta platforma.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">400+</div>
+                        <div class="stat-label">So'zlar</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">60+</div>
+                        <div class="stat-label">Grammatika</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Mashqlar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Grid -->
+    <section class="languages-section">
+        <div class="container">
+            <div class="languages-grid" id="languagesGrid">
+                <!-- Languages will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Nima taqdim etamiz?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3 class="feature-title">Lug'at</h3>
+                    <p class="feature-text">Minglab so'zlar, tarjimalar va misollar bilan to'liq lug'at.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🃏</div>
+                    <h3 class="feature-title">Flashcards</h3>
+                    <p class="feature-text">Interaktiv flashcards orqali so'zlarni tez va oson eslab qoling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3 class="feature-title">Testlar</h3>
+                    <p class="feature-text">Bilimingizni tekshiring va progressingizni kuzating.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Grammatika</h3>
+                    <p class="feature-text">A1 dan C2 gacha barcha darajalar uchun grammatika darslari.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3 class="feature-title">Talaffuz</h3>
+                    <p class="feature-text">To'g'ri talaffuzni audio orqali o'rganing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Progress</h3>
+                    <p class="feature-text">O'rganish progressingiz va statistikangizni ko'ring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2 class="cta-title">Bugun boshlang!</h2>
+                <p class="cta-text">Premium obuna bilan barcha funksiyalardan foydalaning</p>
+                <a href="subscription.html" class="btn btn-primary btn-lg">
+                    ⭐ Premium ga o'tish
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">UstozAI</h3>
+                    <p class="footer-text">Sun'iy intellekt bilan til o'rganish platformasi</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Havolalar</h4>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="languages.html">Tillar</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="subscription.html">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Qo'llab-quvvatlash</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Yordam</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Aloqa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UstozAI. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languageData.js"></script>
+    <script>
+        // Load and display languages
+        async function loadLanguages() {
+            try {
+                const languages = await LanguageData.getLanguages();
+                const grid = document.getElementById('languagesGrid');
+
+                grid.innerHTML = languages.map(lang => `
+                    <div class="language-card" onclick="selectLanguage('${lang.id}')" style="--card-gradient: ${lang.gradient}">
+                        <div class="language-card-inner">
+                            <div class="language-flag">${lang.flag}</div>
+                            <h3 class="language-name">${lang.name}</h3>
+                            <p class="language-native">${lang.nameNative}</p>
+                            <div class="language-info">
+                                <div class="info-item">
+                                    <span class="info-label">Daraja:</span>
+                                    <span class="info-value">${lang.level}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">So'zlar:</span>
+                                    <span class="info-value">${lang.totalWords}+</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Darslar:</span>
+                                    <span class="info-value">${lang.totalLessons}</span>
+                                </div>
+                            </div>
+                            <p class="language-description">${lang.description}</p>
+                            <div class="language-meta">
+                                <span class="difficulty-badge difficulty-${lang.difficulty.toLowerCase()}">${lang.difficulty}</span>
+                                <span class="speakers-count">👥 ${lang.speakers}</span>
+                            </div>
+                            <button class="btn btn-primary btn-block language-btn">
+                                O'rganishni boshlash →
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading languages:', error);
+            }
+        }
+
+        function selectLanguage(langId) {
+            localStorage.setItem('selectedLanguage', langId);
+            window.location.href = `dictionary.html?lang=${langId}`;
+        }
+
+        // Load user name
+        const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+        if (user.name) {
+            document.getElementById('userName').textContent = user.name;
+        }
+
+        // Initialize
+        loadLanguages();
+    </script>
+</body>
+
+</html>

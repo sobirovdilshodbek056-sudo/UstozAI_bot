@@ -1,0 +1,515 @@
+{
+    "language": "ja",
+    "words": [
+        {
+            "id": 1,
+            "word": "こんにちは",
+            "romanization": "konnichiwa",
+            "translation": "salom",
+            "transcription": "[koɴ.ni.tɕi.wa]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ja": "こんにちは！お元気ですか？",
+                    "uz": "Salom! Qalaysiz?"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 2,
+            "word": "さようなら",
+            "romanization": "sayounara",
+            "translation": "xayr",
+            "transcription": "[sa.jo.u.na.ɾa]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ja": "さようなら！また明日！",
+                    "uz": "Xayr! Ertaga ko'rishguncha!"
+                }
+            ],
+            "image": "👋"
+        },
+        {
+            "id": 3,
+            "word": "ありがとう",
+            "romanization": "arigatou",
+            "translation": "rahmat",
+            "transcription": "[a.ɾi.ɡa.to.u]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ja": "ありがとうございます！",
+                    "uz": "Katta rahmat!"
+                }
+            ],
+            "image": "🙏"
+        },
+        {
+            "id": 4,
+            "word": "すみません",
+            "romanization": "sumimasen",
+            "translation": "kechirasiz/iltimos",
+            "transcription": "[sɯ.mi.ma.se.ɴ]",
+            "partOfSpeech": "phrase",
+            "level": "A1",
+            "category": "greetings",
+            "examples": [
+                {
+                    "ja": "すみません、助けてください。",
+                    "uz": "Kechirasiz, yordam bering."
+                }
+            ],
+            "image": "🙏"
+        },
+        {
+            "id": 5,
+            "word": "はい",
+            "romanization": "hai",
+            "translation": "ha",
+            "transcription": "[ha.i]",
+            "partOfSpeech": "interjection",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "ja": "はい、分かりました。",
+                    "uz": "Ha, tushundim."
+                }
+            ],
+            "image": "✅"
+        },
+        {
+            "id": 6,
+            "word": "いいえ",
+            "romanization": "iie",
+            "translation": "yo'q",
+            "transcription": "[i:.e]",
+            "partOfSpeech": "interjection",
+            "level": "A1",
+            "category": "basic",
+            "examples": [
+                {
+                    "ja": "いいえ、違います。",
+                    "uz": "Yo'q, noto'g'ri."
+                }
+            ],
+            "image": "❌"
+        },
+        {
+            "id": 7,
+            "word": "水",
+            "romanization": "mizu",
+            "translation": "suv",
+            "transcription": "[mi.zɯ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "ja": "水を一杯ください。",
+                    "uz": "Bir stakan suv bering."
+                }
+            ],
+            "image": "💧"
+        },
+        {
+            "id": 8,
+            "word": "食べ物",
+            "romanization": "tabemono",
+            "translation": "ovqat",
+            "transcription": "[ta.be.mo.no]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "food",
+            "examples": [
+                {
+                    "ja": "この食べ物は美味しいです！",
+                    "uz": "Bu ovqat mazali!"
+                }
+            ],
+            "image": "🍽️"
+        },
+        {
+            "id": 9,
+            "word": "家",
+            "romanization": "ie",
+            "translation": "uy",
+            "transcription": "[i.e]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "ja": "小さい家に住んでいます。",
+                    "uz": "Men kichik uyda yashayman."
+                }
+            ],
+            "image": "🏠"
+        },
+        {
+            "id": 10,
+            "word": "学校",
+            "romanization": "gakkou",
+            "translation": "maktab",
+            "transcription": "[ɡak.ko.u]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "places",
+            "examples": [
+                {
+                    "ja": "毎日学校に行きます。",
+                    "uz": "Men har kuni maktabga boraman."
+                }
+            ],
+            "image": "🏫"
+        },
+        {
+            "id": 11,
+            "word": "本",
+            "romanization": "hon",
+            "translation": "kitob",
+            "transcription": "[hoɴ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "objects",
+            "examples": [
+                {
+                    "ja": "本を読んでいます。",
+                    "uz": "Men kitob o'qiyapman."
+                }
+            ],
+            "image": "📚"
+        },
+        {
+            "id": 12,
+            "word": "友達",
+            "romanization": "tomodachi",
+            "translation": "do'st",
+            "transcription": "[to.mo.da.tɕi]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "ja": "彼女は私の親友です。",
+                    "uz": "U mening eng yaxshi do'stim."
+                }
+            ],
+            "image": "👥"
+        },
+        {
+            "id": 13,
+            "word": "家族",
+            "romanization": "kazoku",
+            "translation": "oila",
+            "transcription": "[ka.zo.kɯ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "people",
+            "examples": [
+                {
+                    "ja": "家族を愛しています。",
+                    "uz": "Men oilamni yaxshi ko'raman."
+                }
+            ],
+            "image": "👨‍👩‍👧‍👦"
+        },
+        {
+            "id": 14,
+            "word": "時間",
+            "romanization": "jikan",
+            "translation": "vaqt",
+            "transcription": "[dʑi.kaɴ]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "time",
+            "examples": [
+                {
+                    "ja": "今、何時ですか？",
+                    "uz": "Hozir soat necha?"
+                }
+            ],
+            "image": "⏰"
+        },
+        {
+            "id": 15,
+            "word": "愛",
+            "romanization": "ai",
+            "translation": "sevgi",
+            "transcription": "[a.i]",
+            "partOfSpeech": "noun",
+            "level": "A1",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ja": "愛しています。",
+                    "uz": "Men seni yaxshi ko'raman."
+                }
+            ],
+            "image": "❤️"
+        },
+        {
+            "id": 16,
+            "word": "幸せ",
+            "romanization": "shiawase",
+            "translation": "baxtli",
+            "transcription": "[ɕi.a.wa.se]",
+            "partOfSpeech": "adjective/noun",
+            "level": "A2",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ja": "今日はとても幸せです！",
+                    "uz": "Men bugun juda baxtliman!"
+                }
+            ],
+            "image": "😊"
+        },
+        {
+            "id": 17,
+            "word": "美しい",
+            "romanization": "utsukushii",
+            "translation": "chiroyli",
+            "transcription": "[ɯ.tsɯ.kɯ.ɕi.i]",
+            "partOfSpeech": "adjective",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "ja": "なんて美しい日でしょう！",
+                    "uz": "Qanday chiroyli kun!"
+                }
+            ],
+            "image": "🌸"
+        },
+        {
+            "id": 18,
+            "word": "大切",
+            "romanization": "taisetsu",
+            "translation": "muhim",
+            "transcription": "[ta.i.se.tsɯ]",
+            "partOfSpeech": "adjective/noun",
+            "level": "A2",
+            "category": "description",
+            "examples": [
+                {
+                    "ja": "これはとても大切です。",
+                    "uz": "Bu juda muhim."
+                }
+            ],
+            "image": "⚠️"
+        },
+        {
+            "id": 19,
+            "word": "分かる",
+            "romanization": "wakaru",
+            "translation": "tushunmoq",
+            "transcription": "[wa.ka.ɾɯ]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ja": "分かりますか？",
+                    "uz": "Tushunyapsizmi?"
+                }
+            ],
+            "image": "💡"
+        },
+        {
+            "id": 20,
+            "word": "話す",
+            "romanization": "hanasu",
+            "translation": "gapirmoq",
+            "transcription": "[ha.na.sɯ]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ja": "日本語を話せます。",
+                    "uz": "Men yapon tilida gapira olaman."
+                }
+            ],
+            "image": "🗣️"
+        },
+        {
+            "id": 21,
+            "word": "勉強する",
+            "romanization": "benkyou suru",
+            "translation": "o'rganmoq",
+            "transcription": "[beɴ.kjo.u sɯ.ɾɯ]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ja": "日本語を勉強したいです。",
+                    "uz": "Men yapon tilini o'rganmoqchiman."
+                }
+            ],
+            "image": "📖"
+        },
+        {
+            "id": 22,
+            "word": "働く",
+            "romanization": "hataraku",
+            "translation": "ishlamoq",
+            "transcription": "[ha.ta.ɾa.kɯ]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ja": "毎日働いています。",
+                    "uz": "Men har kuni ishlayman."
+                }
+            ],
+            "image": "💼"
+        },
+        {
+            "id": 23,
+            "word": "助ける",
+            "romanization": "tasukeru",
+            "translation": "yordam bermoq",
+            "transcription": "[ta.sɯ.ke.ɾɯ]",
+            "partOfSpeech": "verb",
+            "level": "A2",
+            "category": "actions",
+            "examples": [
+                {
+                    "ja": "助けてくれますか？",
+                    "uz": "Menga yordam bera olasizmi?"
+                }
+            ],
+            "image": "🤝"
+        },
+        {
+            "id": 24,
+            "word": "素晴らしい",
+            "romanization": "subarashii",
+            "translation": "ajoyib",
+            "transcription": "[sɯ.ba.ɾa.ɕi.i]",
+            "partOfSpeech": "adjective",
+            "level": "B1",
+            "category": "description",
+            "examples": [
+                {
+                    "ja": "あなたの作品は素晴らしいです！",
+                    "uz": "Sizning ishingiz ajoyib!"
+                }
+            ],
+            "image": "⭐"
+        },
+        {
+            "id": 25,
+            "word": "知識",
+            "romanization": "chishiki",
+            "translation": "bilim",
+            "transcription": "[tɕi.ɕi.ki]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "education",
+            "examples": [
+                {
+                    "ja": "知識は力です。",
+                    "uz": "Bilim - kuch."
+                }
+            ],
+            "image": "🧠"
+        },
+        {
+            "id": 26,
+            "word": "成功",
+            "romanization": "seikou",
+            "translation": "muvaffaqiyat",
+            "transcription": "[se.i.ko.u]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ja": "成功を祈ります！",
+                    "uz": "Sizga muvaffaqiyat tilayman!"
+                }
+            ],
+            "image": "🏆"
+        },
+        {
+            "id": 27,
+            "word": "達成する",
+            "romanization": "tassei suru",
+            "translation": "erishmoq",
+            "transcription": "[tas.se.i sɯ.ɾɯ]",
+            "partOfSpeech": "verb",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ja": "目標を達成できます！",
+                    "uz": "Maqsadlaringizga erisha olasiz!"
+                }
+            ],
+            "image": "🎯"
+        },
+        {
+            "id": 28,
+            "word": "機会",
+            "romanization": "kikai",
+            "translation": "imkoniyat",
+            "transcription": "[ki.ka.i]",
+            "partOfSpeech": "noun",
+            "level": "B2",
+            "category": "business",
+            "examples": [
+                {
+                    "ja": "これは素晴らしい機会です。",
+                    "uz": "Bu ajoyib imkoniyat."
+                }
+            ],
+            "image": "🚪"
+        },
+        {
+            "id": 29,
+            "word": "夢",
+            "romanization": "yume",
+            "translation": "orzu",
+            "transcription": "[jɯ.me]",
+            "partOfSpeech": "noun",
+            "level": "A2",
+            "category": "emotions",
+            "examples": [
+                {
+                    "ja": "私の夢は先生になることです。",
+                    "uz": "Mening orzuyim o'qituvchi bo'lish."
+                }
+            ],
+            "image": "✨"
+        },
+        {
+            "id": 30,
+            "word": "努力",
+            "romanization": "doryoku",
+            "translation": "harakat",
+            "transcription": "[do.ɾjo.kɯ]",
+            "partOfSpeech": "noun",
+            "level": "B1",
+            "category": "achievement",
+            "examples": [
+                {
+                    "ja": "努力すれば成功できます。",
+                    "uz": "Harakat qilsangiz, muvaffaqiyatga erishasiz."
+                }
+            ],
+            "image": "💪"
+        }
+    ]
+}

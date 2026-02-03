@@ -1,0 +1,304 @@
+{
+    "lessons": [
+        {
+            "language": "en",
+            "id": "en-grammar-1",
+            "level": "A1",
+            "title": "Present Simple Tense",
+            "titleUz": "Oddiy hozirgi zamon",
+            "duration": "15 min",
+            "description": "Har kuni takrorlanadigan harakatlar uchun",
+            "content": {
+                "theory": "Present Simple - oddiy hozirgi zamon. Har kuni yoki muntazam qilinadigan ishlar haqida gapirish uchun ishlatiladi.\n\n**Shakli:**\n• I/You/We/They + verb\n• He/She/It + verb + **s/es**\n\n**Misol:**\n• I work every day. (Men har kuni ishlayman)\n• She works at school. (U maktabda ishlaydi)",
+                "examples": [
+                    {
+                        "en": "I speak English.",
+                        "uz": "Men ingliz tilida gapiraman."
+                    },
+                    {
+                        "en": "He lives in Tashkent.",
+                        "uz": "U Toshkentda yashaydi."
+                    },
+                    {
+                        "en": "They study every day.",
+                        "uz": "Ular har kuni o'qishadi."
+                    }
+                ],
+                "rules": [
+                    "He/She/It uchun **-s** yoki **-es** qo'shamiz",
+                    "Inkor: do not (don't) / does not (doesn't)",
+                    "Savol: Do/Does + podmyet + fe'l?"
+                ],
+                "exercises": [
+                    {
+                        "question": "I ___ (work) every day.",
+                        "answer": "work",
+                        "options": [
+                            "work",
+                            "works",
+                            "working",
+                            "worked"
+                        ]
+                    },
+                    {
+                        "question": "She ___ (like) music.",
+                        "answer": "likes",
+                        "options": [
+                            "like",
+                            "likes",
+                            "liking",
+                            "liked"
+                        ]
+                    }
+                ]
+            },
+            "icon": "📝"
+        },
+        {
+            "language": "en",
+            "id": "en-grammar-2",
+            "level": "A1",
+            "title": "To Be (am/is/are)",
+            "titleUz": "Bo'lmoq fe'li",
+            "duration": "10 min",
+            "description": "Asosiy fe'l - kim ekanligingizni aytish",
+            "content": {
+                "theory": "**To be** - eng muhim fe'l. \"Bo'lmoq\" ma'nosini anglatadi.\n\n**Shakli:**\n• I **am**\n• You/We/They **are**\n• He/She/It **is**",
+                "examples": [
+                    {
+                        "en": "I am a student.",
+                        "uz": "Men talabaman."
+                    },
+                    {
+                        "en": "She is happy.",
+                        "uz": "U baxtli."
+                    },
+                    {
+                        "en": "They are friends.",
+                        "uz": "Ular do'stlar."
+                    }
+                ],
+                "rules": [
+                    "Qisqartma: I'm, you're, he's, she's, it's, we're, they're",
+                    "Inkor: am not, is not (isn't), are not (aren't)",
+                    "Savol: Am I? Is he? Are you?"
+                ]
+            },
+            "icon": "✅"
+        },
+        {
+            "language": "en",
+            "id": "en-grammar-3",
+            "level": "A2",
+            "title": "Past Simple",
+            "titleUz": "Oddiy o'tgan zamon",
+            "duration": "20 min",
+            "description": "O'tmishda bo'lgan ishlar haqida",
+            "content": {
+                "theory": "Past Simple - oddiy o'tgan zamon. O'tmishda bo'lgan ishlar haqida gapirish uchun.\n\n**Oddiy fe'llar:** verb + **-ed**\n**Noto'g'ri fe'llar:** o'zgaradi (go → went)\n\n**Misol:**\n• I worked yesterday. (Men kecha ishladim)\n• He went to school. (U maktabga bordi)",
+                "examples": [
+                    {
+                        "en": "I visited my friend.",
+                        "uz": "Men do'stimga bordim."
+                    },
+                    {
+                        "en": "She studied English.",
+                        "uz": "U ingliz tilini o'rgandi."
+                    },
+                    {
+                        "en": "We ate pizza.",
+                        "uz": "Biz pitsa yedik."
+                    }
+                ],
+                "rules": [
+                    "Oddiy fe'llarga -ed qo'shamiz",
+                    "Noto'g'ri fe'llarni yodlash kerak",
+                    "Inkor: did not (didn't) + verb",
+                    "Savol: Did + podmyet + verb?"
+                ]
+            },
+            "icon": "⏮️"
+        },
+        {
+            "language": "de",
+            "id": "de-grammar-1",
+            "level": "A1",
+            "title": "Artikel (der, die, das)",
+            "titleUz": "Artikl - der, die, das",
+            "duration": "15 min",
+            "description": "Nemis tilida har bir so'zning jinsi bor",
+            "content": {
+                "theory": "Nemis tilida 3 ta jins bor:\n• **der** - erkak jins (maskulin)\n• **die** - ayol jins (feminin)\n• **das** - neuter jins\n\nHar bir ot bilan artikl yodlab olinadi!",
+                "examples": [
+                    {
+                        "de": "der Mann",
+                        "uz": "erkak"
+                    },
+                    {
+                        "de": "die Frau",
+                        "uz": "ayol"
+                    },
+                    {
+                        "de": "das Kind",
+                        "uz": "bola"
+                    },
+                    {
+                        "de": "die Bücher",
+                        "uz": "kitoblar (ko'plik)"
+                    }
+                ],
+                "rules": [
+                    "Ko'plik har doim **die**",
+                    "Har bir otni artikl bilan yodlang",
+                    "Jins mantiqqa bog'liq emas!"
+                ]
+            },
+            "icon": "🔤"
+        },
+        {
+            "language": "de",
+            "id": "de-grammar-2",
+            "level": "A1",
+            "title": "Präsens (Hozirgi zamon)",
+            "titleUz": "Nemisda hozirgi zamon",
+            "duration": "20 min",
+            "description": "Fe'llarni tuslanishi",
+            "content": {
+                "theory": "Nemis fe'llari shaxslarga qarab o'zgaradi.\n\n**Misol: lernen (o'rganmoq)**\n• ich lern**e**\n• du lern**st**\n• er/sie/es lern**t**\n• wir lern**en**\n• ihr lern**t**\n• sie/Sie lern**en**",
+                "examples": [
+                    {
+                        "de": "Ich lerne Deutsch.",
+                        "uz": "Men nemis tilini o'rganaman."
+                    },
+                    {
+                        "de": "Du sprichst gut.",
+                        "uz": "Sen yaxshi gapirasan."
+                    },
+                    {
+                        "de": "Wir arbeiten zusammen.",
+                        "uz": "Biz birgalikda ishlaymiz."
+                    }
+                ]
+            },
+            "icon": "⏰"
+        },
+        {
+            "language": "ko",
+            "id": "ko-grammar-1",
+            "level": "A1",
+            "title": "Hangul Alifbosi",
+            "titleUz": "Hangul - koreys alifbosi",
+            "duration": "25 min",
+            "description": "Koreys yozuvini o'rganish",
+            "content": {
+                "theory": "Hangul - koreys alifbosi. 24 ta harf:\n\n**Undoshlar (14):**\nㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ ㅇ ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ\n\n**Unlilar (10):**\nㅏ ㅑ ㅓ ㅕ ㅗ ㅛ ㅜ ㅠ ㅡ ㅣ\n\n**Bo'g'inlarga birlashadi:**\n한 = ㅎ + ㅏ + ㄴ = han\n국 = ㄱ + ㅜ + ㄱ = guk\n한국 = hanguk (Koreya)",
+                "examples": [
+                    {
+                        "ko": "가",
+                        "romanization": "ga"
+                    },
+                    {
+                        "ko": "나",
+                        "romanization": "na"
+                    },
+                    {
+                        "ko": "사랑",
+                        "romanization": "sarang",
+                        "uz": "sevgi"
+                    }
+                ]
+            },
+            "icon": "🔤"
+        },
+        {
+            "language": "ko",
+            "id": "ko-grammar-2",
+            "level": "A1",
+            "title": "이다/아니다 (To be)",
+            "titleUz": "Bo'lmoq/emas - 이다/아니다",
+            "duration": "15 min",
+            "description": "Koreys tilida 'bo'lmoq' fe'li",
+            "content": {
+                "theory": "**이다** - bo'lmoq\n**아니다** - emas\n\n**Shakli:**\n• Ot + 이에요/예요 (rasmiy emas)\n• Ot + 입니다 (rasmiy)\n\n**Inkor:**\n• Ot + 이/가 아니에요",
+                "examples": [
+                    {
+                        "ko": "학생이에요.",
+                        "uz": "Talabaman."
+                    },
+                    {
+                        "ko": "선생님이에요.",
+                        "uz": "O'qituvchiman."
+                    },
+                    {
+                        "ko": "학생이 아니에요.",
+                        "uz": "Talaba emasman."
+                    }
+                ]
+            },
+            "icon": "✅"
+        },
+        {
+            "language": "ja",
+            "id": "ja-grammar-1",
+            "level": "A1",
+            "title": "Hiragana va Katakana",
+            "titleUz": "Hiragana va Katakana alifbolari",
+            "duration": "30 min",
+            "description": "Yapon yozuvi asoslari",
+            "content": {
+                "theory": "Yapon tilida 3 ta yozuv tizimi:\n\n**1. Hiragana (46 ta belgi)**\nYapon so'zlari uchun:\nあ い う え お\nか き く け こ\n\n**2. Katakana (46 ta belgi)**\nXorijiy so'zlar uchun:\nア イ ウ エ オ\nカ キ ク ケ コ\n\n**3. Kanji**\nXitoy hierogliflari",
+                "examples": [
+                    {
+                        "ja": "あいうえお",
+                        "romanization": "a-i-u-e-o"
+                    },
+                    {
+                        "ja": "カタカナ",
+                        "romanization": "katakana"
+                    },
+                    {
+                        "ja": "日本",
+                        "romanization": "nihon",
+                        "uz": "Yaponiya"
+                    }
+                ]
+            },
+            "icon": "🔤"
+        },
+        {
+            "language": "ja",
+            "id": "ja-grammar-2",
+            "level": "A1",
+            "title": "です/じゃないです (To be)",
+            "titleUz": "Bo'lmoq - です",
+            "duration": "15 min",
+            "description": "Yapon tilida 'bo'lmoq' fe'li",
+            "content": {
+                "theory": "**です (desu)** - bo'lmoq\n**じゃないです (ja nai desu)** - emas\n\n**Shakli:**\nOt + です\n\n**Inkor:**\nOt + じゃないです",
+                "examples": [
+                    {
+                        "ja": "学生です。",
+                        "romanization": "Gakusei desu.",
+                        "uz": "Talabaman."
+                    },
+                    {
+                        "ja": "先生です。",
+                        "romanization": "Sensei desu.",
+                        "uz": "O'qituvchiman."
+                    },
+                    {
+                        "ja": "学生じゃないです。",
+                        "romanization": "Gakusei ja nai desu.",
+                        "uz": "Talaba emasman."
+                    }
+                ],
+                "rules": [
+                    "です har doim gap oxirida",
+                    "Rasmiy muloqot uchun",
+                    "Do'stlar bilan: だ (da) ishlatiladi"
+                ]
+            },
+            "icon": "✅"
+        }
+    ]
+}

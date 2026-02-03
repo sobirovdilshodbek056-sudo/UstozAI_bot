@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI - Ota-ona paneli">
+    <title>Ota-ona Paneli - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="parent-dashboard.html" style="color: var(--color-primary);">Ota-ona Paneli</a></li>
+                <li><a href="subscription.html">Obuna</a></li>
+            </ul>
+            <div class="navbar-cta">
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Chiqish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Parent Dashboard Section -->
+    <section class="section" style="min-height: 100vh; padding-top: 100px;">
+        <div class="container">
+            <!-- Header -->
+            <div style="margin-bottom: var(--spacing-2xl);">
+                <h1>👪 Ota-ona Paneli</h1>
+                <p style="color: var(--text-secondary); font-size: var(--font-size-lg);">
+                    Farzandingizning o'quv jarayonini kuzatib boring
+                </p>
+            </div>
+
+            <!-- Student Selector -->
+            <div class="card" style="margin-bottom: var(--spacing-2xl);">
+                <div class="form-group">
+                    <label for="studentSelect" class="form-label">O'quvchini tanlang</label>
+                    <select id="studentSelect" class="form-select" onchange="loadStudentData()">
+                        <option value="current">Joriy foydalanuvchi</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Overview Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalActivity">0</div>
+                    <div class="stat-label">Jami faollik</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="averageScore">0%</div>
+                    <div class="stat-label">O'rtacha ball</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="testsCount">0</div>
+                    <div class="stat-label">Topshirilgan testlar</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="studyHours">0</div>
+                    <div class="stat-label">O'qish soatlari</div>
+                </div>
+            </div>
+
+            <!-- Subject Performance -->
+            <div class="card" style="margin-top: var(--spacing-2xl);">
+                <h2 style="margin-bottom: var(--spacing-xl);">📊 Fanlar bo'yicha progress</h2>
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                            <div>
+                                <span style="font-weight: 600;">🧮 Matematika</span>
+                                <span
+                                    style="color: var(--text-muted); font-size: var(--font-size-sm); margin-left: var(--spacing-sm);">
+                                    15 test topshirilgan
+                                </span>
+                            </div>
+                            <span class="text-gradient"
+                                style="font-weight: 700; font-size: var(--font-size-lg);">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                            <div>
+                                <span style="font-weight: 600;">🔬 Fizika</span>
+                                <span
+                                    style="color: var(--text-muted); font-size: var(--font-size-sm); margin-left: var(--spacing-sm);">
+                                    12 test topshirilgan
+                                </span>
+                            </div>
+                            <span class="text-gradient"
+                                style="font-weight: 700; font-size: var(--font-size-lg);">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                            <div>
+                                <span style="font-weight: 600;">⚗️ Kimyo</span>
+                                <span
+                                    style="color: var(--text-muted); font-size: var(--font-size-sm); margin-left: var(--spacing-sm);">
+                                    8 test topshirilgan
+                                </span>
+                            </div>
+                            <span class="text-gradient"
+                                style="font-weight: 700; font-size: var(--font-size-lg);">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                            <div>
+                                <span style="font-weight: 600;">🌱 Biologiya</span>
+                                <span
+                                    style="color: var(--text-muted); font-size: var(--font-size-sm); margin-left: var(--spacing-sm);">
+                                    10 test topshirilgan
+                                </span>
+                            </div>
+                            <span class="text-gradient"
+                                style="font-weight: 700; font-size: var(--font-size-lg);">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Test History -->
+            <div class="grid grid-2" style="margin-top: var(--spacing-2xl);">
+                <!-- Activity Timeline -->
+                <div class="card">
+                    <h3 style="margin-bottom: var(--spacing-lg);">📅 So'nggi faollik</h3>
+                    <div id="activityTimeline" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div
+                            style="padding: var(--spacing-md); background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 3px solid var(--color-primary);">
+                            <div style="font-weight: 600;">Test topshirildi</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Matematika - 85%
+                            </div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Bugun, 14:30</div>
+                        </div>
+
+                        <div
+                            style="padding: var(--spacing-md); background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 3px solid var(--color-secondary);">
+                            <div style="font-weight: 600;">AI bilan suhbat</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">5 ta savol berildi
+                            </div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Kecha, 18:15</div>
+                        </div>
+
+                        <div
+                            style="padding: var(--spacing-md); background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 3px solid var(--color-primary);">
+                            <div style="font-weight: 600;">Test topshirildi</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Fizika - 70%</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">2 kun oldin</div>
+                        </div>
+
+                        <div
+                            style="padding: var(--spacing-md); background: var(--bg-tertiary); border-radius: var(--radius-md); border-left: 3px solid var(--color-secondary);">
+                            <div style="font-weight: 600;">AI bilan suhbat</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">3 ta savol berildi
+                            </div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">3 kun oldin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Activity Chart (Mock) -->
+                <div class="card">
+                    <h3 style="margin-bottom: var(--spacing-lg);">📈 Haftalik faollik</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Dushanba</span>
+                                <span style="font-weight: 600;">2 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 67%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Seshanba</span>
+                                <span style="font-weight: 600;">1.5 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Chorshanba</span>
+                                <span style="font-weight: 600;">3 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Payshanba</span>
+                                <span style="font-weight: 600;">2.5 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 83%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Juma</span>
+                                <span style="font-weight: 600;">1 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Shanba</span>
+                                <span style="font-weight: 600;">2 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 67%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs);">
+                                <span>Yakshanba</span>
+                                <span style="font-weight: 600;">1.5 soat</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strengths & Weaknesses -->
+            <div class="grid grid-2" style="margin-top: var(--spacing-2xl);">
+                <div class="card" style="border: 2px solid #22c55e;">
+                    <h3 style="color: #22c55e; margin-bottom: var(--spacing-lg);">💪 Kuchli tomonlar</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #22c55e;">✓</span>
+                            <span>Matematika - Algebraik tenglamalar</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #22c55e;">✓</span>
+                            <span>Biologiya - Fotosintez</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #22c55e;">✓</span>
+                            <span>Fizika - Mexanika</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border: 2px solid #f59e0b;">
+                    <h3 style="color: #f59e0b; margin-bottom: var(--spacing-lg);">📚 Yaxshilash kerak</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #f59e0b;">!</span>
+                            <span>Kimyo - Organik birikmalar</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #f59e0b;">!</span>
+                            <span>Matematika - Geometriya</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: #f59e0b;">!</span>
+                            <span>Fizika - Elektr</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="card card-gradient" style="margin-top: var(--spacing-2xl); text-align: center;">
+                <h2>💡 Tavsiyalar</h2>
+                <p style="font-size: var(--font-size-lg); margin: var(--spacing-lg) 0; color: var(--text-secondary);">
+                    Farzandingiz yaxshi natijalar ko'rsatmoqda! Kimyo faniga ko'proq e'tibor berish tavsiya etiladi.
+                    Haftalik 3-4 soat mashg'ulot optimal hisoblanadi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!AppState.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            loadStudentData();
+        });
+
+        function loadStudentData() {
+            // Load current user's data
+            const chatCount = AppState.chatHistory.length;
+            const testCount = AppState.testResults.length;
+
+            // Calculate average score
+            let avgScore = 0;
+            if (testCount > 0) {
+                const totalScore = AppState.testResults.reduce((sum, test) => sum + (test.score || 0), 0);
+                avgScore = Math.round(totalScore / testCount);
+            }
+
+            // Estimate study hours (mock)
+            const studyHours = Math.floor((chatCount * 0.1 + testCount * 0.5) * 10) / 10;
+
+            // Update stats
+            document.getElementById('totalActivity').textContent = chatCount + testCount;
+            document.getElementById('averageScore').textContent = avgScore + '%';
+            document.getElementById('testsCount').textContent = testCount;
+            document.getElementById('studyHours').textContent = studyHours + ' soat';
+        }
+
+        function logout() {
+            if (confirm('Rostdan ham chiqmoqchimisiz?')) {
+                AppState.logout();
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

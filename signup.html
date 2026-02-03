@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI platformasiga ro'yxatdan o'tish - 7 kun bepul sinov!">
+    <title>Ro'yxatdan o'tish - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <div class="navbar-cta">
+                <a href="login.html" class="btn btn-secondary btn-sm">Kirish</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="card" style="max-width: 520px; margin: 0 auto;">
+                <h2 class="text-center">Ro'yxatdan o'tish 🚀</h2>
+                <p class="text-center" style="color: var(--text-secondary); margin-bottom: var(--spacing-xl);">
+                    7 kun bepul sinab ko'ring! Kredit karta kerak emas.
+                </p>
+
+                <form id="signupForm" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ism va Familiya</label>
+                        <input type="text" id="name" class="form-input" placeholder="Ism Familiya" required
+                            minlength="3" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="example@email.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade" class="form-label">Sinf</label>
+                        <select id="grade" class="form-select" required>
+                            <option value="">Tanlang...</option>
+                            <option value="5-sinf">5-sinf</option>
+                            <option value="6-sinf">6-sinf</option>
+                            <option value="7-sinf">7-sinf</option>
+                            <option value="8-sinf">8-sinf</option>
+                            <option value="9-sinf">9-sinf</option>
+                            <option value="10-sinf">10-sinf</option>
+                            <option value="11-sinf">11-sinf</option>
+                            <option value="abituriyent">Abituriyent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Parol</label>
+                        <input type="password" id="password" class="form-input" placeholder="Kamida 6 ta belgi" required
+                            minlength="6" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Parolni tasdiqlang</label>
+                        <input type="password" id="confirmPassword" class="form-input"
+                            placeholder="Parolni qayta kiriting" required minlength="6" />
+                    </div>
+
+                    <div class="form-group" style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                        <input type="checkbox" id="terms" required style="width: auto;">
+                        <label for="terms" style="margin: 0; cursor: pointer; color: var(--text-secondary);">
+                            <a href="#" style="color: var(--color-primary);">Foydalanish shartlari</a>ga roziman
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            🎉 Bepul boshlash
+                        </button>
+                    </div>
+                </form>
+
+                <div class="text-center" style="margin-top: var(--spacing-lg);">
+                    <p style="color: var(--text-muted);">
+                        Allaqachon hisobingiz bormi?
+                        <a href="login.html" style="color: var(--color-primary); font-weight: 600;">
+                            Kirish
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Benefits -->
+                <div
+                    style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <h4 class="text-center" style="margin-bottom: var(--spacing-lg);">Bepul sinov davomida:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li
+                            style="padding: var(--spacing-sm) 0; display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--color-secondary);">✓</span>
+                            <span>10 ta savol so'rash imkoniyati</span>
+                        </li>
+                        <li
+                            style="padding: var(--spacing-sm) 0; display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--color-secondary);">✓</span>
+                            <span>3 ta test topshirish</span>
+                        </li>
+                        <li
+                            style="padding: var(--spacing-sm) 0; display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--color-secondary);">✓</span>
+                            <span>Progress kuzatish</span>
+                        </li>
+                        <li
+                            style="padding: var(--spacing-sm) 0; display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--color-secondary);">✓</span>
+                            <span>Kredit karta kerak emas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const grade = document.getElementById('grade').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+
+            // Validation
+            if (password !== confirmPassword) {
+                showNotification('Parollar mos kelmadi! ❌', 'error');
+                return;
+            }
+
+            if (!terms) {
+                showNotification('Foydalanish shartlariga rozilashingiz kerak! ⚠️', 'error');
+                return;
+            }
+
+            // Mock signup
+            if (AppState.signup(name, email, password, grade)) {
+                showNotification('Muvaffaqiyatli ro\'yxatdan o\'tdingiz! 🎉', 'success');
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            } else {
+                showNotification('Xato! Qaytadan urinib ko\'ring.', 'error');
+            }
+        }
+
+        // Redirect if already logged in
+        if (AppState.isLoggedIn()) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+
+</html>

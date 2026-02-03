@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UstozAI - Test topshirish">
+    <title>Test - UstozAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <span>🎓</span>
+                UstozAI
+            </a>
+            <div class="navbar-cta">
+                <div id="timer"
+                    style="background: var(--bg-tertiary); padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-md); font-weight: 600;">
+                    ⏱️ <span id="timeDisplay">00:00</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Test Taking Section -->
+    <section class="section" style="min-height: 100vh; padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <!-- Test Header -->
+            <div class="card" style="margin-bottom: var(--spacing-xl);">
+                <h2 id="testTitle">Test</h2>
+                <div style="display: flex; gap: var(--spacing-xl); margin-top: var(--spacing-md); flex-wrap: wrap;">
+                    <div>
+                        <span style="color: var(--text-muted);">Jami savollar:</span>
+                        <span id="totalQuestions" style="font-weight: 600; margin-left: var(--spacing-xs);">0</span>
+                    </div>
+                    <div>
+                        <span style="color: var(--text-muted);">Javob berilgan:</span>
+                        <span id="answeredCount"
+                            style="font-weight: 600; margin-left: var(--spacing-xs); color: var(--color-secondary);">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions Container -->
+            <div id="questionsContainer"></div>
+
+            <!-- Submit Button -->
+            <div class="card text-center" style="margin-top: var(--spacing-2xl);">
+                <button onclick="submitTest()" class="btn btn-primary btn-lg">
+                    ✅ Testni yakunlash
+                </button>
+                <p style="color: var(--text-muted); margin-top: var(--spacing-md); font-size: var(--font-size-sm);">
+                    Barcha savollarga javob berganingizdan ishonch hosil qiling
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script src="js/testData.js"></script>
+    <script>
+        let currentTest = null;
+        let userAnswers = [];
+        let startTime = null;
+        let timerInterval = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!AppState.isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Get test info from session storage
+            const testInfo = sessionStorage.getItem('currentTest');
+            if (!testInfo) {
+                window.location.href = 'tests.html';
+                return;
+            }
+
+            const { grade, subject } = JSON.parse(testInfo);
+            currentTest = TestData.getTest(grade, subject);
+
+            if (!currentTest) {
+                showNotification('Test topilmadi!', 'error');
+                window.location.href = 'tests.html';
+                return;
+            }
+
+            // Initialize test
+            initializeTest();
+            startTimer();
+        });
+
+        function initializeTest() {
+            document.getElementById('testTitle').textContent = currentTest.title;
+            document.getElementById('totalQuestions').textContent = currentTest.questions.length;
+
+            // Initialize answers array
+            userAnswers = new Array(currentTest.questions.length).fill(null);
+
+            // Render questions
+            renderQuestions();
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            let html = '';
+
+            currentTest.questions.forEach((q, index) => {
+                html += `
+                    <div class="test-question" id="question-${index}">
+                        <div class="question-number">Savol ${index + 1}</div>
+                        <h3 style="margin-bottom: var(--spacing-lg);">${q.question}</h3>
+                        <div class="test-options">
+                            ${q.options.map((option, optIndex) => `
+                                <div class="test-option" onclick="selectAnswer(${index}, ${optIndex})">
+                                    <input 
+                                        type="radio" 
+                                        name="question-${index}" 
+                                        id="q${index}-opt${optIndex}" 
+                                        value="${optIndex}"
+                                        style="margin-right: var(--spacing-sm);"
+                                    />
+                                    <label for="q${index}-opt${optIndex}" style="cursor: pointer; flex: 1;">
+                                        ${String.fromCharCode(65 + optIndex)}. ${option}
+                                    </label>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function selectAnswer(questionIndex, optionIndex) {
+            userAnswers[questionIndex] = optionIndex;
+
+            // Update UI
+            const questionDiv = document.getElementById(`question-${questionIndex}`);
+            const options = questionDiv.querySelectorAll('.test-option');
+
+            options.forEach((opt, idx) => {
+                if (idx === optionIndex) {
+                    opt.classList.add('selected');
+                } else {
+                    opt.classList.remove('selected');
+                }
+            });
+
+            // Update answered count
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function startTimer() {
+            startTime = Date.now();
+            const duration = currentTest.duration * 60 * 1000; // Convert to milliseconds
+
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, duration - elapsed);
+
+                const minutes = Math.floor(remaining / 60000);
+                const seconds = Math.floor((remaining % 60000) / 1000);
+
+                document.getElementById('timeDisplay').textContent =
+                    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                // Change color when time is running out
+                const timerDiv = document.getElementById('timer');
+                if (remaining < 60000) { // Less than 1 minute
+                    timerDiv.style.background = '#ef4444';
+                    timerDiv.style.color = 'white';
+                } else if (remaining < 300000) { // Less than 5 minutes
+                    timerDiv.style.background = '#f59e0b';
+                    timerDiv.style.color = 'white';
+                }
+
+                // Auto-submit when time is up
+                if (remaining === 0) {
+                    clearInterval(timerInterval);
+                    showNotification('Vaqt tugadi! Test avtomatik yakunlandi.', 'error');
+                    setTimeout(() => submitTest(), 2000);
+                }
+            }, 1000);
+        }
+
+        function submitTest() {
+            // Check if all questions are answered
+            const unanswered = userAnswers.filter(a => a === null).length;
+
+            if (unanswered > 0) {
+                if (!confirm(`${unanswered} ta savolga javob berilmagan. Baribir yakunlaysizmi?`)) {
+                    return;
+                }
+            }
+
+            // Stop timer
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+
+            // Get test info
+            const testInfo = JSON.parse(sessionStorage.getItem('currentTest'));
+
+            // Evaluate test
+            const results = TestData.evaluateTest(testInfo.grade, testInfo.subject, userAnswers);
+
+            // Save results
+            AppState.testResults.push(results);
+            AppState.save();
+
+            // Clear session
+            sessionStorage.removeItem('currentTest');
+
+            // Show success message
+            showNotification('Test yakunlandi! Natijalaringizni ko\'ring. 🎉', 'success');
+
+            // Redirect to results
+            setTimeout(() => {
+                window.location.href = `results.html?index=${AppState.testResults.length - 1}`;
+            }, 1500);
+        }
+
+        // Prevent accidental page close
+        window.addEventListener('beforeunload', (e) => {
+            if (timerInterval) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+{
+    "tests": [
+        {
+            "id": "vocab-test-en-1",
+            "language": "en",
+            "level": "A1",
+            "title": "Greetings & Basic Words",
+            "titleUz": "Salomlashish va asosiy so'zlar",
+            "totalQuestions": 10,
+            "timeLimit": 300,
+            "questions": [
+                {
+                    "id": 1,
+                    "type": "translate",
+                    "question": "hello",
+                    "questionUz": "\"hello\" so'zining tarjimasi:",
+                    "correctAnswer": "salom",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 2,
+                    "type": "translate",
+                    "question": "thank you",
+                    "questionUz": "\"thank you\" so'zining tarjimasi:",
+                    "correctAnswer": "rahmat",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 3,
+                    "type": "reverse",
+                    "questionUz": "\"suv\" so'zini inglizcha qanday?",
+                    "correctAnswer": "water",
+                    "options": [
+                        "water",
+                        "food",
+                        "house",
+                        "book"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 4,
+                    "type": "reverse",
+                    "questionUz": "\"do'st\" so'zini inglizcha qanday?",
+                    "correctAnswer": "friend",
+                    "options": [
+                        "family",
+                        "friend",
+                        "house",
+                        "school"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 5,
+                    "type": "translate",
+                    "question": "beautiful",
+                    "questionUz": "\"beautiful\" so'zining tarjimasi:",
+                    "correctAnswer": "chiroyli",
+                    "options": [
+                        "chiroyli",
+                        "baxtli",
+                        "muhim",
+                        "katta"
+                    ],
+                    "points": 10
+                }
+            ]
+        },
+        {
+            "id": "vocab-test-de-1",
+            "language": "de",
+            "level": "A1",
+            "title": "Grundwörter",
+            "titleUz": "Asosiy so'zlar",
+            "totalQuestions": 10,
+            "timeLimit": 300,
+            "questions": [
+                {
+                    "id": 1,
+                    "type": "translate",
+                    "question": "Hallo",
+                    "questionUz": "\"Hallo\" so'zining tarjimasi:",
+                    "correctAnswer": "salom",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 2,
+                    "type": "translate",
+                    "question": "Danke",
+                    "questionUz": "\"Danke\" so'zining tarjimasi:",
+                    "correctAnswer": "rahmat",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 3,
+                    "type": "reverse",
+                    "questionUz": "\"suv\" so'zini nemischa qanday?",
+                    "correctAnswer": "Wasser",
+                    "options": [
+                        "Wasser",
+                        "Essen",
+                        "Haus",
+                        "Buch"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 4,
+                    "type": "reverse",
+                    "questionUz": "\"do'st\" so'zini nemischa qanday?",
+                    "correctAnswer": "Freund",
+                    "options": [
+                        "Familie",
+                        "Freund",
+                        "Haus",
+                        "Schule"
+                    ],
+                    "points": 10
+                }
+            ]
+        },
+        {
+            "id": "vocab-test-ko-1",
+            "language": "ko",
+            "level": "A1",
+            "title": "기본 단어",
+            "titleUz": "Asosiy so'zlar",
+            "totalQuestions": 10,
+            "timeLimit": 300,
+            "questions": [
+                {
+                    "id": 1,
+                    "type": "translate",
+                    "question": "안녕하세요",
+                    "romanization": "annyeonghaseyo",
+                    "questionUz": "\"안녕하세요\" so'zining tarjimasi:",
+                    "correctAnswer": "salom",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 2,
+                    "type": "translate",
+                    "question": "감사합니다",
+                    "romanization": "gamsahamnida",
+                    "questionUz": "\"감사합니다\" so'zining tarjimasi:",
+                    "correctAnswer": "rahmat",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "iltimos"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 3,
+                    "type": "reverse",
+                    "questionUz": "\"suv\" so'zini koreyscha qanday?",
+                    "correctAnswer": "물",
+                    "options": [
+                        "물",
+                        "음식",
+                        "집",
+                        "책"
+                    ],
+                    "points": 10
+                }
+            ]
+        },
+        {
+            "id": "vocab-test-ja-1",
+            "language": "ja",
+            "level": "A1",
+            "title": "基本単語",
+            "titleUz": "Asosiy so'zlar",
+            "totalQuestions": 10,
+            "timeLimit": 300,
+            "questions": [
+                {
+                    "id": 1,
+                    "type": "translate",
+                    "question": "こんにちは",
+                    "romanization": "konnichiwa",
+                    "questionUz": "\"こんにちは\" so'zining tarjimasi:",
+                    "correctAnswer": "salom",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "kechirasiz"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 2,
+                    "type": "translate",
+                    "question": "ありがとう",
+                    "romanization": "arigatou",
+                    "questionUz": "\"ありがとう\" so'zining tarjimasi:",
+                    "correctAnswer": "rahmat",
+                    "options": [
+                        "salom",
+                        "xayr",
+                        "rahmat",
+                        "kechirasiz"
+                    ],
+                    "points": 10
+                },
+                {
+                    "id": 3,
+                    "type": "reverse",
+                    "questionUz": "\"suv\" so'zini yaponcha qanday?",
+                    "correctAnswer": "水",
+                    "options": [
+                        "水",
+                        "食べ物",
+                        "家",
+                        "本"
+                    ],
+                    "points": 10
+                }
+            ]
+        }
+    ]
+}
