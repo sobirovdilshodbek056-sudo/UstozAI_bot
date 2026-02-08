@@ -17,7 +17,7 @@ Browserda mana bu manzilni oching:
 Olingan yangi kalitni (boshlanishi `AIza...`) nusxalang va bot papkasidagi `.env` faylini ochib, eskisini o'rniga qo'ying:
 
 ```env
-GEMINI_API_KEY=SIZNING_YANGI_KALITINGIZ
+GEMINI_API_KEY=AIzaSyCuluCxfMtM9NkTi6i7pYd8kc34Io5UX68
 ```
 
 ### 4-qadam: Botni qayta ishga tushirish
